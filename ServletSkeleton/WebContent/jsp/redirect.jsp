@@ -14,6 +14,7 @@
 	<br>
 	<h2>Your reversed text is</h2>
 	<h3><%=session.getAttribute("reversedText") %></h3>
+	<h3>Recieved by method <%=session.getAttribute("metod")%></h3>
 	<br>
 	<br>
 	<a href="/ServletSkeleton/index.jsp">Back to landing page!!!</a>

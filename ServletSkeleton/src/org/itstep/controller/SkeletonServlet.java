@@ -28,9 +28,9 @@ public class SkeletonServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String text = request.getParameter("text");
 		String reversedText = service.reverseText(text);
-		
+	
 		session.setAttribute("reversedText",reversedText);
-		
+		session.setAttribute("met", "- GET");
 		response.sendRedirect("/ServletSkeleton/jsp/redirect.jsp");
 	}
 
@@ -41,7 +41,13 @@ public class SkeletonServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		doGet(request, response);
+		HttpSession session = request.getSession();
+		String text = request.getParameter("text");
+		String reversedText = service.reverseText(text);
+		
+		session.setAttribute("reversedText",reversedText);
+		session.setAttribute("met", "- POST");
+		response.sendRedirect("/ServletSkeleton/jsp/redirect.jsp");
 	}
 
 	/**
@@ -51,7 +57,13 @@ public class SkeletonServlet extends HttpServlet {
 	 */
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	
+		HttpSession session = request.getSession();
+		String text = request.getParameter("text");
+		String reversedText = service.reverseText(text);
+		
+		session.setAttribute("reversedText",reversedText);
+		session.setAttribute("met", "- PUT");
+		response.sendRedirect("/ServletSkeleton/jsp/redirect.jsp");
 	}
 
 	/**
@@ -61,7 +73,13 @@ public class SkeletonServlet extends HttpServlet {
 	 */
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	
+		HttpSession session = request.getSession();
+		String text = request.getParameter("text");
+		String reversedText = service.reverseText(text);
+		
+		session.setAttribute("reversedText",reversedText);
+		session.setAttribute("metod", "- DELETE");
+		response.sendRedirect("/ServletSkeleton/jsp/redirect.jsp");
 	}
 
 }
